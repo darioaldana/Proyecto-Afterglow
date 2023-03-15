@@ -24,17 +24,13 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             <Route
               path={USER_PAGE}
               element={
-                <Private>
                   <UserPage />
-                </Private>
               }
             />
             <Route
               path={CHAT_PAGE}
               element={
-                <Private>
                   <ChatPage />
-                </Private>
               }
             />
           </Routes>
