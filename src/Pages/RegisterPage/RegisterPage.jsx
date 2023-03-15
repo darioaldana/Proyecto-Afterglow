@@ -18,8 +18,10 @@ function RegisterPage() {
     const [formData, setFormData] = useState({
       name: "",
       email: "",
+      uid: "",
       password: "",
       age: 0,
+      photoURL: "gs://afterglow-c7ada.appspot.com/Perfil_generico.png",
       job: (options[0].value),
       degree: "",
       cv: "",
@@ -45,8 +47,8 @@ function RegisterPage() {
     const onSubmit = async (event) => {
     try{
         event.preventDefault();
-        const { email, password, ...extraData } = formData;
-        await registerWithEmailAndPassword(email, password, extraData);
+        const { email, password, uid, ...extraData } = formData;
+        await registerWithEmailAndPassword(email, password, uid, extraData);
         console.log("Todo salio bien")
         alert("Register complete...Enjoy!")
         navigate(USER_PAGE);
