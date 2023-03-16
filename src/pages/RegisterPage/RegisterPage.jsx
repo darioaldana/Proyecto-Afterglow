@@ -243,7 +243,7 @@ function RegisterPage() {
   
             <button 
             type="submit" className={styles.submitBtn}>
-                      SING UP!
+                      SIGN UP!
             </button>
 
             <button
@@ -263,8 +263,8 @@ function RegisterPage() {
             </button>          
   
             <Link to={LOGIN_URL} className={styles.loginRedirect}>
-              ¿Already sing up?{" "}
-              <span className={styles.redirectLink}>Login</span>
+              Already signed up?{" "}
+              <span className={styles.redirectLink}> Login</span>
             </Link>
           </form>
         </div>

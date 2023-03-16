@@ -109,8 +109,8 @@ function LoginPage() {
           </button>
   
           <Link to={REGISTER_URL} className={styles.loginRedirect}>
-            ¿No sign in yet?{" "}
-            <span className={styles.redirectLink}>SIGN IN</span>
+            Don't have an account yet? {" "}
+            <span className={styles.redirectLink}>SIGN UP</span>
           </Link>
         </form>
       </div>
