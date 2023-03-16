@@ -1,5 +1,6 @@
 import { Component } from "react";
 import "./NavbarStyles.css";
+import { Link, useNavigate } from "react-router-dom";
 
 class Navbar extends Component {
     render(){
@@ -7,8 +8,19 @@ class Navbar extends Component {
             <nav className="NavbarItems">
                 <h1 className="navbar-logo">Afterglow</h1>
                 <ul className="nav-menu">
-                        <li className="nav-links"><a href="/catalog">Catalog</a></li>
-                        <li className="nav-links"><a href="/">About</a></li>
+                        <li>
+                        <Link to = "/catalog">
+                            <button className="nav-links">Catalog</button>
+                        </Link>
+
+
+                        <Link to="/about">
+                            <button  className="nav-links">
+                                About
+                            </button>
+                        </Link>
+                        </li>
+                       
                 </ul>
             </nav>
         )

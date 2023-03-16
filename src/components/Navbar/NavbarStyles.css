@@ -39,17 +39,18 @@
 
 .nav-menu li{
     display: inline-block;
-
+    background-color: rgba(118, 186, 178, 1);
 }
 
 .nav-links{
+    margin: 0px;
     text-decoration: none;
     color: #222;
     font-size: 1.2rem;
     font-weight: 600;
     padding: 0.7rem 1rem;
-    white-space: nowrap;
-    display: inline-block;
+    background-color: rgb(180, 255, 255);
+    border-radius: 20px;
 }
 
 .nav-links:hover{
@@ -58,6 +59,7 @@
     border-radius: 4px;
     transition: all 0.2s ease-in-out;
     cursor: pointer;
+    transform: scale(1.05);
 }
 
 a:link {
