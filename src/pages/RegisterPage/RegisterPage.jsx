@@ -93,7 +93,7 @@ function RegisterPage() {
                  <div>
                      <div className={styles.inputContainer}>
                        <h3 htmlFor="name">
-                           User Name
+                           Username
                        </h3>
                        <input
                          type="text"
@@ -183,7 +183,7 @@ function RegisterPage() {
                    {/* USERNAME FIELD */}
                    <div className={styles.inputContainer}>
                      <h3 htmlFor="name">
-                         User Name
+                         Username
                      </h3>
                      <input
                        type="text"

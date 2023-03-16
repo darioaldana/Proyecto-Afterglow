@@ -21,20 +21,20 @@ function UserPage() {
           )}
       </button>
       {isOpen && (
-        <div className='bg-teal-400 absolute top-20 flex flex-col items-start rounded-lg p-2 w-50'>
-          <div className='flex w-20 justify-between bg-teal-200 hover:bg-blue-300 cursor-pointer p-4 rounded-r-lg  hover:border-l-white border-l-4 '>
+        <div className='w-[140px] bg-teal-400 absolute top-20 flex flex-col items-start rounded-lg p-2'>
+          <div className='flex w-[125px] justify-between bg-teal-200 hover:bg-blue-300 cursor-pointer p-4 rounded-r-lg  hover:border-l-white border-l-4 '>
             <Link to={PROFILE_PAGE} className="bg-teal-200  hover:bg-blue-300">Profile</Link>
           </div>
-          <div className='flex w-20 justify-between bg-teal-200 hover:bg-blue-300 cursor-pointer p-4 rounded-r-lg  hover:border-l-white border-l-4 '>
+          <div className='flex w-[125px] justify-between bg-teal-200 hover:bg-blue-300 cursor-pointer p-4 rounded-r-lg  hover:border-l-white border-l-4 '>
             <Link to={DATE_PAGE} className="bg-teal-200  hover:bg-blue-300">Appointments</Link>
           </div>
-          <div className='flex w-20 justify-between bg-teal-200 hover:bg-blue-300 cursor-pointer p-4 rounded-r-lg  hover:border-l-white border-l-4 '>
+          <div className='flex w-[125px] justify-between bg-teal-200 hover:bg-blue-300 cursor-pointer p-4 rounded-r-lg  hover:border-l-white border-l-4 '>
             <Link to={CATALOG_PAGE} className="bg-teal-200  hover:bg-blue-300">Catalog</Link>
           </div>
-          <div className='flex w-20 justify-between bg-teal-200 hover:bg-blue-300 cursor-pointer p-4 rounded-r-lg  hover:border-l-white border-l-4 '>
+          <div className='flex w-[125px] justify-between bg-teal-200 hover:bg-blue-300 cursor-pointer p-4 rounded-r-lg  hover:border-l-white border-l-4 '>
             <Link to={CHAT_PAGE} className="bg-teal-200  hover:bg-blue-300">Chat</Link>
           </div>
-          <div className='flex w-20 justify-between bg-teal-200 hover:bg-blue-300 cursor-pointer p-4 rounded-r-lg  hover:border-l-white border-l-4 '>
+          <div className='flex w-[125px] justify-between bg-teal-200 hover:bg-blue-300 cursor-pointer p-4 rounded-r-lg  hover:border-l-white border-l-4 '>
             <Link to={REVIEW_PAGE} className="bg-teal-200  hover:bg-blue-300">Review</Link>
           </div>
         </div>
