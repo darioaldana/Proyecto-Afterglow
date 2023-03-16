@@ -1,0 +1,93 @@
+.hero{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-image: url(../../assets/Captura.PNG);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero-text{
+    position: absolute;
+    text-align: center;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.hero-text h1{
+    font-size: 2rem;
+    font-weight: 800;
+    background: black;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.hero-text p{
+    font-size: 1rem;
+    font-weight: 800;
+    color: black;
+    padding: 0.5rem 0 2rem 0;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.hero-text .login-btn{
+    text-decoration: none;
+    background: rgba(118, 186, 178, 1);
+    padding: 1rem 2rem 1rem;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: black;
+}
+.hero-text .register-btn{
+    text-decoration: none;
+    background: rgba(118, 186, 178, 1);
+    padding: 1rem 1rem 1rem 1rem;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: black;
+}
+
+@media screen and(max-width: 555px) {
+    .hero-text h1{
+        padding: 10px, 20px;
+    }
+    .hero-text p{
+        font-size: 1rem;
+        padding: 0 0 2rem 0;
+    }
+    .hero-text .login-btn{
+        padding: 0.6rem 1rem;
+        border-radius: 10px;
+        font-size: 1rem;
+    }
+    
+    .hero-text .register-btn{
+        padding: 0.6rem 1rem;
+        border-radius: 10px;
+        font-size: 1rem;
+    }
+}
+
+.hero-text .login-btn:hover{
+    text-decoration: none;
+    background-color: lightcyan;
+    color: black;
+}
+
+.hero-text .register-btn:hover{
+    text-decoration: none;
+    background-color: lightcyan;
+    color: black;
+}
