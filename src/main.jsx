@@ -4,10 +4,9 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import HomePage from './pages/HomePage/HomePage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import RegisterPage from './pages/RegisterPage/RegisterPage'
+import UserPage from './pages/UserPage/UserPage';
 import {CHAT_PAGE, HOME_URL, LOGIN_URL, REGISTER_URL, USER_PAGE, REVIEW_PAGE,CATALOG_PAGE,PROFILE_PAGE,DATE_PAGE } from "./constants/urls";
 import './index.css'
-import UserPage from './pages/UserPage/UserPage';
-
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
