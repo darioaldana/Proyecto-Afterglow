@@ -26,7 +26,7 @@ function UserPage() {
             <Link to={PROFILE_PAGE} className="bg-teal-200  hover:bg-blue-300">Profile</Link>
           </div>
           <div className='flex w-20 justify-between bg-teal-200 hover:bg-blue-300 cursor-pointer p-4 rounded-r-lg  hover:border-l-white border-l-4 '>
-            <Link to={DATE_PAGE} className="bg-teal-200  hover:bg-blue-300">Date</Link>
+            <Link to={DATE_PAGE} className="bg-teal-200  hover:bg-blue-300">Appointments</Link>
           </div>
           <div className='flex w-20 justify-between bg-teal-200 hover:bg-blue-300 cursor-pointer p-4 rounded-r-lg  hover:border-l-white border-l-4 '>
             <Link to={CATALOG_PAGE} className="bg-teal-200  hover:bg-blue-300">Catalog</Link>
