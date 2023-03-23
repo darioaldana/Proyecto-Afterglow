@@ -41,11 +41,11 @@ function RegisterPage2() {
   const onSubmit = async (event) => {
     try {
       event.preventDefault();
+      const { email, uid, ...extraData } = formData;
       if (Number.parseInt(formData.age) <= 0) {
         alert('Edad invalida!')
         return;
       }
-      const { email, uid, ...extraData } = formData;
       await register_pt2(email, uid, extraData);
       console.log("Todo salio bien");
       alert("Register complete...Enjoy!");
