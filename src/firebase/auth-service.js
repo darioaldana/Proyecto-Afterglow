@@ -1,66 +1,70 @@
 // TODOS LOS METODOS DE AUTENTICACION
 
+import { FirebaseError } from "firebase/app";
 import {
   signInWithPopup,
   signOut,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   getAdditionalUserInfo,
-  updateProfile,
 } from "firebase/auth";
-import { doc, setDoc } from "firebase/firestore";
-import { Result } from "postcss";
-import { auth, db, googleProvider, facebookProvider } from "./config";
+import { auth, googleProvider, facebookProvider } from "./config";
 import { createUserProfile } from "./users-service";
 
 export const signInWithGoogle = async () => {
   try {
     const result = await signInWithPopup(auth, googleProvider);
-
     const { isNewUser } = getAdditionalUserInfo(result);
-
+    console.log(isNewUser);
     if (isNewUser) {
-      console.log(result);
-      await createUserProfile(result.user.uid, {
-        email: result.user.email,
-        name: result.user.displayName,
-        uid: result.user.uid,
-        age: 0,
-        photoURL: result.user.photoURL,
-        roll: "",
-        deegre: "",
-        cv: "",
-      });
-      try {
-        await updateProfile(result.user, {
-          name: result.user.displayName,
-          photoURL: result.user.photoURL,
-        });
-        await userC(result)
-      } catch (error) {
-        console.log(error);
-      }
+      var regis;
+      return (regis = [
+        result.user.email,
+        result.user.displayName,
+        result.user.uid,
+        result.user.photoURL,
+      ]);
+    } else {
+      console.log("This user is already in our DataBase");
+      return "registered";
     }
   } catch (error) {
     console.log(error);
+    return null;
+  }
+};
+
+export const register_pt2 = async (email, uid, extraData) => {
+  try {
+    await userC(uid)
+    return createUserProfile(uid, {
+      email,
+      ...extraData,
+    });
+  } catch (error) {
+    console.error(error);
   }
 };
 
 export const registerWithEmailAndPassword = async (
+  name,
   email,
   password,
-  uid,
-  extraData
+  photoURL
 ) => {
-  const result = await createUserWithEmailAndPassword(auth, email, password);
-
-  await userC(result)
-
-  return createUserProfile(result.user.uid, {
-    email,
-    uid: result.user.uid,
-    ...extraData,
-  });
+  try {
+    const result = await createUserWithEmailAndPassword(auth, email, password);
+    console.log(result);
+    var regis;
+    return (regis = [email, name, result.user.uid, photoURL]);
+  } catch (error) {
+    if (error instanceof FirebaseError) {
+      return "registered";
+    } else {
+      console.log(error.name);
+      return null;
+    }
+  }
 };
 
 export const loginWithEmailAndPassword = async (

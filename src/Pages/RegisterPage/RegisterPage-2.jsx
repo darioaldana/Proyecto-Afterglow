@@ -1,27 +1,30 @@
 import React from "react";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import styles from "./RegisterPage.module.css";
 import {
   registerWithEmailAndPassword,
+  register_pt2,
   signInWithFacebook,
   signInWithGoogle,
 } from "../../firebase/auth-service";
 import { LOGIN_URL, USER_PAGE } from "../../constants/urls";
+
 function RegisterPage2() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const data = location.state;
   const options = [
     { value: "", text: "--Choose an option--" },
     { value: "pacient", text: "Pacient" },
     { value: "doctor", text: "Doctor" },
   ];
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    uid: "",
-    password: "",
+    name: data[1],
+    email: data[0],
+    uid: data[2],
     age: 0,
-    photoURL: "gs://afterglow-c7ada.appspot.com/Perfil_generico.png",
+    photoURL: data[3],
     job: options[0].value,
     degree: "",
     cv: "",
@@ -38,8 +41,12 @@ function RegisterPage2() {
   const onSubmit = async (event) => {
     try {
       event.preventDefault();
-      const { email, password, uid, ...extraData } = formData;
-      await registerWithEmailAndPassword(email, password, uid, extraData);
+      const { email, uid, ...extraData } = formData;
+      if (Number.parseInt(formData.age) <= 0) {
+        alert('Edad invalida!')
+        return;
+      }
+      await register_pt2(email, uid, extraData);
       console.log("Todo salio bien");
       alert("Register complete...Enjoy!");
       navigate(USER_PAGE);
@@ -50,6 +57,7 @@ function RegisterPage2() {
     }
   };
   console.log(options);
+  console.log(data);
   return (
     <>
       <div className={styles.container}>
