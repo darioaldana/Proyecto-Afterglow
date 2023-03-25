@@ -4,7 +4,7 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 // import HomePage from './pages/HomePage/HomePage';
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
-import { CHAT_PAGE, HOME_URL, LOGIN_URL, REGISTER_URL, USER_PAGE, REGISTER_URL2 } from "./constants/urls";
+import { HOME_URL, LOGIN_URL, REGISTER_URL, USER_PAGE, REGISTER_URL2 } from "./constants/urls";
 import "./index.css";
 import UserPage from "./pages/UserPage/UserPage";
 import { AuthContextProvider } from "./context/AuthContext";

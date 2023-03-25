@@ -10,6 +10,7 @@ import {
 } from "firebase/auth";
 import { auth, googleProvider, facebookProvider } from "./config";
 import { createUserProfile } from "./users-service";
+import { doc, setDoc } from "firebase/firestore";
 
 export const signInWithGoogle = async () => {
   try {
@@ -36,7 +37,7 @@ export const signInWithGoogle = async () => {
 
 export const register_pt2 = async (email, uid, extraData) => {
   try {
-    await userC(uid)
+    userC(uid)
     return createUserProfile(uid, {
       email,
       ...extraData,
