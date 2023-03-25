@@ -95,28 +95,22 @@ export const signInWithFacebook = async () => {
     const { isNewUser } = getAdditionalUserInfo(result);
 
     if (isNewUser) {
-      await createUserProfile(result.user.uid, {
-        email: result.user.email,
-        name: result.user.displayName,
-        uid: result.user.uid,
-        age: 0,
-        photoURL: result.user.photoURL,
-        roll: "",
-      });
-      try {
-        await updateProfile(result.user, {
-          name: result.user.displayName,
-          photoURL: result.user.photoURL,
-        });
-        await userC(result)
-      } catch (error) {
-        console.log(error);
-      }
+      var regis;
+      return (regis = [
+        result.user.email,
+        result.user.displayName,
+        result.user.uid,
+        result.user.photoURL,
+      ]);
+    } else {
+      console.log("This user is already in our DataBase");
+      return "registered";
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
-export const userC = async (result) => {
-  await setDoc(doc(db, "userChats", result.user.uid), {});
+export const userC = async (uid) => {
+  await setDoc(doc(db, "userChats", uid), {});
 };

@@ -42,10 +42,6 @@ function RegisterPage2() {
     try {
       event.preventDefault();
       const { email, uid, ...extraData } = formData;
-      if (Number.parseInt(formData.age) <= 0) {
-        alert('Edad invalida!')
-        return;
-      }
       await register_pt2(email, uid, extraData);
       console.log("Todo salio bien");
       alert("Register complete...Enjoy!");
@@ -110,7 +106,7 @@ function RegisterPage2() {
                   <div className={styles.inputContainer}>
                     <h3 htmlFor="age">CV</h3>
                     <input
-                      type="file"
+                      type="text"
                       name="cv"
                       id="cv"
                       onChange={handleOnChange}
