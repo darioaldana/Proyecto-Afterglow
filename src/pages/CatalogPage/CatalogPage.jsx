@@ -5,7 +5,7 @@ import JuanCristobalMartinez from "../../assets/h4.jpg"
 import MartinaGonzalez from "../../assets/m5.jpg"
 import "./CatalogPage.css"
 import DoctorCard from "../../components/DoctorCard/DoctorCard"
-import Navbar from "../../components/NavBar/Navbar"
+// import Navbar from "../../components/NavBar/Navbar"
 
 
 function Catalog() {
@@ -54,7 +54,7 @@ function Catalog() {
   return (
     <div>
 
-        <Navbar />
+        {/* <Navbar /> */}
 
         <div className="doctores">
           {doctores.map((doctor)=> (

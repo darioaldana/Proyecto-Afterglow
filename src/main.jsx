@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import LoginPage from "./pages/LoginPage/LoginPage";
+import LoginPage from "./pages/LoginPage/LoginPage"
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import RegisterPage2 from "./pages/RegisterPage/RegisterPage-2";
 import UserPage from "./pages/UserPage/UserPage";
@@ -9,7 +9,6 @@ import UserPage from "./pages/UserPage/UserPage";
 //import ChatPage from "./pages/ChatPage/Home";
 import Layout from "./pages/Layout/Layout";
 import HomePage from "./pages/HomePage/HomePage";
-import UserPage from "./pages/UserPage/UserPage";
 import CatalogPage from "./pages/CatalogPage/CatalogPage";
 import {
   CHAT_PAGE,
