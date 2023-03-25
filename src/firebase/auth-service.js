@@ -119,3 +119,15 @@ export const userC = async (uid) => {
     console.log(error)
   }
 };
+
+export const logout = async (callback) => {
+  try {
+    await signOut(auth);
+
+    if (callback) {
+      callback();
+    }
+  } catch (error) {
+    console.error("SIGN OUT FAILED", { error });
+  }
+};
