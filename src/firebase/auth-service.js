@@ -8,7 +8,7 @@ import {
   signInWithEmailAndPassword,
   getAdditionalUserInfo,
 } from "firebase/auth";
-import { auth, googleProvider, facebookProvider } from "./config";
+import { db, auth, googleProvider, facebookProvider } from "./config";
 import { createUserProfile } from "./users-service";
 import { doc, setDoc } from "firebase/firestore";
 
@@ -113,5 +113,9 @@ export const signInWithFacebook = async () => {
   }
 };
 export const userC = async (uid) => {
+  try{ 
   await setDoc(doc(db, "userChats", uid), {});
+  } catch (error){
+    console.log(error)
+  }
 };
