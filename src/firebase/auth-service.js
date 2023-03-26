@@ -36,7 +36,7 @@ export const signInWithGoogle = async () => {
 
 export const register_pt2 = async (email, uid, extraData) => {
   try {
-    await userC(uid)
+    // await userC(uid)
     return createUserProfile(uid, {
       email,
       ...extraData,
