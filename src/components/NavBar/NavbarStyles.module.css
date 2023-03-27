@@ -1,13 +1,14 @@
 .NavbarItems{
+    margin: 0px;
     background-color: rgba(118, 186, 178, 1);
     display: flex;
-    justify-content: space-between;
+    justify-content: right;
     align-items: center;
     padding: 0 30px;
     box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
     width: 95%;
     height: 80px;
-    border-radius: 13px;
+    border-radius: 20px;
     position: fixed;
     top: 20px;
     left: 50%;
@@ -19,7 +20,7 @@
 }
 
 .navbar_logo{
-    margin-left: 120px;
+    justify-self: left;
     color: #222;
     font-size: 2rem;
     cursor: pointer;
@@ -30,16 +31,24 @@
 .nav_menu{
     text-decoration: none;
     display: inline-block;
+    grid-template-columns: repeat(4);
+    grid-gap: 10px;
+    list-style: none;
+    align-items: center;
+}
+
+.nav_menu_logged{
+    text-decoration: none;
+    display: inline-block;
     grid-template-columns: repeat(3);
     grid-gap: 10px;
     list-style: none;
     align-items: center;
-    
+    margin-left: 150px;
 }
 
 .nav_menu_li{
     display: inline-block;
-
 }
 
 .nav_links{

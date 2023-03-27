@@ -9,7 +9,6 @@ export function Layout() {
       <ChatContextProvider>
         <main>
           <Navbar />
-
           <section className="body">
             <Outlet />
           </section>
