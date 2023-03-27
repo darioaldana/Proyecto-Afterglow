@@ -11,6 +11,8 @@ import Layout from "./pages/Layout/Layout";
 import HomePage from "./pages/HomePage/HomePage";
 import CatalogPage from "./pages/CatalogPage/CatalogPage";
 import ChatPage from "./pages/ChatPage/ChatPage";
+import AppointmentsPage from "./pages/AppointmentsPage/AppointmentsPage";
+
 import {
   CHAT_PAGE,
   HOME_URL,
@@ -21,7 +23,7 @@ import {
   REVIEW_PAGE,
   CATALOG_PAGE,
   PROFILE_PAGE,
-  DATE_PAGE,
+  APPOINTMENTS_PAGE,
 } from "./constants/urls";
 import "./index.css";
 
@@ -103,10 +105,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             }
           />
           <Route
-            path={DATE_PAGE}
+            path={APPOINTMENTS_PAGE}
             element={
               <Private>
-                <h1>DATE PAGE</h1>
+                <AppointmentsPage/>
               </Private>
             }
           />
