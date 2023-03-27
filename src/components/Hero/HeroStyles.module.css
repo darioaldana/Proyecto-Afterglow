@@ -8,7 +8,7 @@
     background-size: cover;
 }
 
-.hero-text{
+.hero_text{
     position: absolute;
     text-align: center;
     top: 55%;
@@ -19,7 +19,7 @@
     -webkit-background-clip: text;
 }
 
-.hero-text h1{
+.hero_text_h1{
     font-size: 2rem;
     font-weight: 800;
     background: black;
@@ -27,7 +27,7 @@
     -webkit-background-clip: text;
 }
 
-.hero-text p{
+.hero_text_p{
     font-size: 1rem;
     font-weight: 800;
     color: black;
@@ -36,7 +36,7 @@
     -webkit-background-clip: text;
 }
 
-.hero-text .login-btn{
+.login_btn{
     text-decoration: none;
     background: rgba(118, 186, 178, 1);
     padding: 1rem 2rem 1rem;
@@ -47,7 +47,7 @@
     letter-spacing: 2px;
     color: black;
 }
-.hero-text .register-btn{
+.register_btn{
     text-decoration: none;
     background: rgba(118, 186, 178, 1);
     padding: 1rem 1rem 1rem 1rem;
@@ -60,33 +60,33 @@
 }
 
 @media screen and(max-width: 555px) {
-    .hero-text h1{
+    .hero_text_h1{
         padding: 10px, 20px;
     }
-    .hero-text p{
+    .hero_text_p{
         font-size: 1rem;
         padding: 0 0 2rem 0;
     }
-    .hero-text .login-btn{
+    .login_btn{
         padding: 0.6rem 1rem;
         border-radius: 10px;
         font-size: 1rem;
     }
     
-    .hero-text .register-btn{
+    .register_btn{
         padding: 0.6rem 1rem;
         border-radius: 10px;
         font-size: 1rem;
     }
 }
 
-.hero-text .login-btn:hover{
+.login_btn:hover{
     text-decoration: none;
     background-color: lightcyan;
     color: black;
 }
 
-.hero-text .register-btn:hover{
+.register_btn:hover{
     text-decoration: none;
     background-color: lightcyan;
     color: black;

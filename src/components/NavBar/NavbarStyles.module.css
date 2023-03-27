@@ -18,7 +18,7 @@
     background-repeat: no-repeat;
 }
 
-.navbar-logo{
+.navbar_logo{
     margin-left: 120px;
     color: #222;
     font-size: 2rem;
@@ -27,7 +27,7 @@
     -webkit-background-clip: text;
 }
 
-.nav-menu{
+.nav_menu{
     text-decoration: none;
     display: inline-block;
     grid-template-columns: repeat(3);
@@ -37,12 +37,12 @@
     
 }
 
-.nav-menu li{
+.nav_menu_li{
     display: inline-block;
 
 }
 
-.nav-links{
+.nav_links{
     text-decoration: none;
     color: #222;
     font-size: 1.2rem;
@@ -52,7 +52,7 @@
     display: inline-block;
 }
 
-.nav-links:hover{
+.nav_links:hover {
     background-color: lightcyan;
     color: black;
     border-radius: 4px;
