@@ -30,6 +30,7 @@ module.exports = {
       fontSize: {
         'date': ['12px', '20px']
         }
+      
     },
   },
   plugins: [],
