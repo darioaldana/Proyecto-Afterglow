@@ -15,7 +15,7 @@ import { v4 as uuid } from "uuid";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 
 const Input = () => {
-  const [text, setText] = useState("");
+  const [texts, setTexts] = useState("");
   const [img, setImg] = useState(null);
 
   const { currentUser } = useContext(AuthContext);
@@ -23,7 +23,27 @@ const Input = () => {
 
   let now = +new Date();;
 
+  const updateUChat = async(text) => {
+    await updateDoc(doc(db, "userChats", currentUser.uid), {
+      [data.chatId + ".lastMessage"]: {
+        text,
+      },
+      [data.chatId + ".date"]: serverTimestamp(),
+    });
+
+    await updateDoc(doc(db, "userChats", data.user.uid), {
+      [data.chatId + ".lastMessage"]: {
+        text,
+      },
+      [data.chatId + ".date"]: serverTimestamp(),
+    });
+    setTexts("");
+    setImg(null);
+  }
+
   const handleSend = async () => {
+    const text = texts
+    setTexts("");
     if (img) {
       const storageRef = ref(store, uuid());
 
@@ -47,7 +67,8 @@ const Input = () => {
           });
         }
       );
-    } else {
+      updateUChat(texts)
+    } else if (text.trim().length > 0) {
       await updateDoc(doc(db, "chats", data.chatId), {
         messages: arrayUnion({
           id: uuid(),
@@ -56,24 +77,9 @@ const Input = () => {
           date: now,
         }),
       });
+      updateUChat(text)
     }
 
-    await updateDoc(doc(db, "userChats", currentUser.uid), {
-      [data.chatId + ".lastMessage"]: {
-        text,
-      },
-      [data.chatId + ".date"]: serverTimestamp(),
-    });
-
-    await updateDoc(doc(db, "userChats", data.user.uid), {
-      [data.chatId + ".lastMessage"]: {
-        text,
-      },
-      [data.chatId + ".date"]: serverTimestamp(),
-    });
-
-    setText("");
-    setImg(null);
   };
   return (
     <div className="input h-12 bg-white flex items-center content-between">
@@ -81,8 +87,8 @@ const Input = () => {
       className="w-full outline-none border-none text-emerald-600 text-lg placeholder-gray-400"
         type="text"
         placeholder="Type something..."
-        onChange={(e) => setText(e.target.value)}
-        value={text}
+        onChange={(e) => setTexts(e.target.value)}
+        value={texts}
       />
       <div className="send flex items-center gap-2.5">
         <img className="h-6 cursor-pointer" src={Attach} alt="" />
