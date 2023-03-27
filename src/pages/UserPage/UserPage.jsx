@@ -10,7 +10,7 @@ function UserPage() {
   return (
     <>
     <div className='grid h-screen place-items-center'>
-        <h1 className="text-7xl mt-40 z-10">BE KIND TO YOUR MIND</h1>
+        <h1 className="text-7xl mt-[80px] z-10">BE KIND TO YOUR MIND</h1>
         <img src={UserPageFoto} className="max-w-l min-h-full"/>
     </div>
     </>
