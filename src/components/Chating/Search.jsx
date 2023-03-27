@@ -71,13 +71,16 @@ const Search = () => {
           [combinedId + ".date"]: serverTimestamp(),
         });
       }
-    } catch (err) {}
+    } catch (error) {
+      console.log(error)
+      console.log(currentUser.uid)
+    }
 
     setUser(null);
     setUsername("")
   };
   return (
-    <div className="search border-solid border-verde border-b-2">
+    <div className="bg-cyan-600 search border-solid border-verde border-b-2">
       <div className="searchForm p-2.5">
         <input
           className="bg-transparent border-none text-white outline-none placeholder-gris"
@@ -91,7 +94,7 @@ const Search = () => {
       {err && <span>User not found!</span>}
       {user && (
         <div className="userChat p-2.5 flex items-center gap-2.5 text-white cursor-pointer hover:bg-azul" onClick={handleSelect}>
-          <img className="bg-gris w-6 h-6 rounded-full object-cover" src={user.photoURL} alt="" />
+          <img className="bg-gris w-6 h-6 rounded-full object-cover" src={`${currentUser.photoURL}`} alt="" />
           <div className="userChatInfo">
             <span>{user.name}</span>
           </div>

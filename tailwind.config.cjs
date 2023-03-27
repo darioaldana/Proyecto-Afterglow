@@ -26,7 +26,10 @@ module.exports = {
       },
       maxWidth: {
         '4/5': '80%',
-      }
+      },
+      fontSize: {
+        'date': ['12px', '20px']
+        }
     },
   },
   plugins: [],

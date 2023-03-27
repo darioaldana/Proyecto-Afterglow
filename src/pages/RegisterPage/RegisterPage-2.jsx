@@ -55,6 +55,7 @@ function RegisterPage2() {
       console.log("Todo salio bien");
       alert("Register complete...Enjoy!");
       navigate(USER_PAGE);
+      window.location.reload(false);
     } catch (error) {
       console.log(error);
       console.log("This email is already in our DataBase");

@@ -39,7 +39,7 @@ const Chats = () => {
           <img className="bg-gray-400 w-6 h-6 rounded-full object-cover" src={chat[1].userInfo.photoURL} alt="" />
           <div className="userChatInfo">
             <span className="text-lg font-medium">{chat[1].userInfo.name}</span>
-            <p className="text-sm text-gray-700">{chat[1].lastMessage?.text}</p>
+            <p className="text-sm text-gray-700">{`${(chat[1].lastMessage?.text).substring(0, 50) + "..."}`}</p>
           </div>
         </div>
       ))}

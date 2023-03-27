@@ -15,6 +15,10 @@
   @apply bg-azul text-white rounded-tl-lg rounded-b-lg;
 }
 
+.userP{
+  @apply rounded-tr-lg
+}
+
 * {
     margin: 0px;
     padding: 0px;

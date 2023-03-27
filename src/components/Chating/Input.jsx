@@ -21,7 +21,7 @@ const Input = () => {
   const { currentUser } = useContext(AuthContext);
   const { data } = useContext(ChatContext);
 
-  let now = new Date();
+  let now = +new Date();;
 
   const handleSend = async () => {
     if (img) {
@@ -53,7 +53,7 @@ const Input = () => {
           id: uuid(),
           text,
           senderId: currentUser.uid,
-          date: now.toLocaleString(),
+          date: now,
         }),
       });
     }

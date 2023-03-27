@@ -40,6 +40,7 @@ export const register_pt2 = async (email, uid, extraData) => {
     userC(uid)
     return createUserProfile(uid, {
       email,
+      uid,
       ...extraData,
     });
   } catch (error) {
