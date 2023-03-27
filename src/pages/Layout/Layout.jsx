@@ -10,7 +10,7 @@ export function Layout() {
         <main>
           <Navbar />
 
-          <section className="body">
+          <section className="body bg-turquesa-1 box-border p-0 m-0">
             <Outlet />
           </section>
         </main>
