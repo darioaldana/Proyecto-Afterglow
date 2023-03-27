@@ -1,14 +1,11 @@
 import React from "react";
 import { useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./RegisterPage.module.css";
 import {
-  registerWithEmailAndPassword,
   register_pt2,
-  signInWithFacebook,
-  signInWithGoogle,
 } from "../../firebase/auth-service";
-import { LOGIN_URL, USER_PAGE } from "../../constants/urls";
+import { USER_PAGE } from "../../constants/urls";
 
 function RegisterPage2() {
   const navigate = useNavigate();
@@ -46,6 +43,14 @@ function RegisterPage2() {
         alert('Edad invalida!')
         return;
       }
+      var archivoRuta = formData.cv
+      const regex = /(.pdf)$/;
+      if(formData.job=='Doctor'){
+        if (!regex.test(archivoRuta)){
+          alert('No se acepta este tipo de archivo, asegurate que el archivo seleccionado sea PDF!');
+          return;
+        }
+      }
       await register_pt2(email, uid, extraData);
       console.log("Todo salio bien");
       alert("Register complete...Enjoy!");
@@ -56,8 +61,6 @@ function RegisterPage2() {
       alert("This email is already in our DataBase, Login!!");
     }
   };
-  console.log(options);
-  console.log(data);
   return (
     <>
       <div className={styles.container}>
@@ -101,7 +104,7 @@ function RegisterPage2() {
                       type="text"
                       name="degree"
                       id="degree"
-                      placeholder="Ejmp. Axiety"
+                      placeholder="Ejmp. Anxiety"
                       onChange={handleOnChange}
                       required
                     />

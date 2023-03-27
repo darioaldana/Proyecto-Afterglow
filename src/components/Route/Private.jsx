@@ -1,17 +1,16 @@
 import { Navigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
+import { HOME_URL } from "../../constants/urls"
 
-function Private() {
+function Private({ children }) {
   const { currentUser } = useContext(AuthContext);
 
-  const ProtectedRoute = ({ children }) => {
     if (!currentUser) {
-      return <Navigate to="/login" />;
+      return <Navigate to={HOME_URL} />;
     }
 
-    return children
-  };
+    return children;
 }
 
 export default Private

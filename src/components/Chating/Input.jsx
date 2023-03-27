@@ -21,6 +21,8 @@ const Input = () => {
   const { currentUser } = useContext(AuthContext);
   const { data } = useContext(ChatContext);
 
+  let now = new Date();
+
   const handleSend = async () => {
     if (img) {
       const storageRef = ref(store, uuid());
@@ -38,7 +40,7 @@ const Input = () => {
                 id: uuid(),
                 text,
                 senderId: currentUser.uid,
-                date: Timestamp.now(),
+                date: now.toLocaleString(),
                 img: downloadURL,
               }),
             });
@@ -51,7 +53,7 @@ const Input = () => {
           id: uuid(),
           text,
           senderId: currentUser.uid,
-          date: Timestamp.now(),
+          date: now.toLocaleString(),
         }),
       });
     }

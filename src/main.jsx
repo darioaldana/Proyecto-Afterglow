@@ -1,15 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import LoginPage from "./pages/LoginPage/LoginPage"
+import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import RegisterPage2 from "./pages/RegisterPage/RegisterPage-2";
 import UserPage from "./pages/UserPage/UserPage";
-//import Private from "./components/Route/Private";
-//import ChatPage from "./pages/ChatPage/Home";
+import Private from "./components/Route/Private";
+import Public from "./components/Route/Public";
 import Layout from "./pages/Layout/Layout";
 import HomePage from "./pages/HomePage/HomePage";
 import CatalogPage from "./pages/CatalogPage/CatalogPage";
+import ChatPage from "./pages/ChatPage/ChatPage";
 import {
   CHAT_PAGE,
   HOME_URL,
@@ -29,16 +30,86 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <BrowserRouter>
       <Routes>
         <Route element={<Layout />}>
-          <Route path={HOME_URL} element={<HomePage />} />
-          <Route path={REGISTER_URL} element={<RegisterPage />} />
-          <Route path={REGISTER_URL2} element={<RegisterPage2 />} />
-          <Route path={LOGIN_URL} element={<LoginPage />} />
-          <Route path={USER_PAGE} element={<UserPage />} />
-          <Route path={CHAT_PAGE} element={<h1>CHAT PAGE</h1>} />
-          <Route path={REVIEW_PAGE} element={<h1>REVIEW PAGE</h1>} />
-          <Route path={CATALOG_PAGE} element={<CatalogPage />} />
-          <Route path={PROFILE_PAGE} element={<h1>PROFILE PAGE</h1>} />
-          <Route path={DATE_PAGE} element={<h1>DATE PAGE</h1>} />
+          <Route
+            path={HOME_URL}
+            element={
+              <Public>
+                <HomePage />
+              </Public>
+            }
+          />
+          <Route
+            path={REGISTER_URL}
+            element={
+              <Public>
+                <RegisterPage />
+              </Public>
+            }
+          />
+          <Route
+            path={REGISTER_URL2}
+            element={
+              <Public>
+                <RegisterPage2 />
+              </Public>
+            }
+          />
+          <Route
+            path={LOGIN_URL}
+            element={
+              <Public>
+                <LoginPage />
+              </Public>
+            }
+          />
+          <Route
+            path={USER_PAGE}
+            element={
+              <Private>
+                <UserPage />
+              </Private>
+            }
+          />
+          <Route
+            path={CHAT_PAGE}
+            element={
+              <Private>
+                <ChatPage />
+              </Private>
+            }
+          />
+          <Route
+            path={REVIEW_PAGE}
+            element={
+              <Private>
+                <h1>REVIEW PAGE</h1>
+              </Private>
+            }
+          />
+          <Route
+            path={CATALOG_PAGE}
+            element={
+              <Private>
+                <CatalogPage />
+              </Private>
+            }
+          />
+          <Route
+            path={PROFILE_PAGE}
+            element={
+              <Private>
+                <h1>PROFILE PAGE</h1>
+              </Private>
+            }
+          />
+          <Route
+            path={DATE_PAGE}
+            element={
+              <Private>
+                <h1>DATE PAGE</h1>
+              </Private>
+            }
+          />
         </Route>
       </Routes>
     </BrowserRouter>

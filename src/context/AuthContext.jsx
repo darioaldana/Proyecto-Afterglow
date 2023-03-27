@@ -6,18 +6,18 @@ import { getUserProfile } from "../firebase/users-service";
 export const AuthContext = createContext();
 
 export function AuthContextProvider({ children }) {
-  const [user, setUser] = useState(null);
+  const [currentUser, setCurrentUser] = useState(null);
   const [isLoadingUser, setIsLoadingUser] = useState(true);
 
   useEffect(() => {
     onAuthStateChanged(auth, async (firebaseUser) => {
       setIsLoadingUser(true);
-      if (firebaseUser && !user) {
+      if (firebaseUser && !currentUser) {
         const userProfile = await getUserProfile(firebaseUser.email);
 
-        setUser(userProfile);
+        setCurrentUser(userProfile);
       } else {
-        setUser(null);
+        setCurrentUser(null);
       }
 
       setIsLoadingUser(false);
@@ -27,8 +27,8 @@ export function AuthContextProvider({ children }) {
   return (
     <AuthContext.Provider
       value={{
-        user,
-        setUser,
+        currentUser,
+        setCurrentUser,
         isLoadingUser,
         setIsLoadingUser,
       }}

@@ -3,6 +3,18 @@
 @tailwind components;
 @tailwind utilities;
 
+.owner{
+  @apply flex-row-reverse;
+}
+
+.messageContent{
+  @apply items-end;
+}
+
+.currentP{
+  @apply bg-azul text-white rounded-tl-lg rounded-b-lg;
+}
+
 * {
     margin: 0px;
     padding: 0px;
