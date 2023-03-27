@@ -94,7 +94,7 @@ const Search = () => {
       {err && <span>User not found!</span>}
       {user && (
         <div className="userChat p-2.5 flex items-center gap-2.5 text-white cursor-pointer hover:bg-azul" onClick={handleSelect}>
-          <img className="bg-gris w-6 h-6 rounded-full object-cover" src={`${currentUser.photoURL}`} alt="" />
+          <img className="bg-gris w-6 h-6 rounded-full object-cover" src={`${user.photoURL}`} alt="" />
           <div className="userChatInfo">
             <span>{user.name}</span>
           </div>
