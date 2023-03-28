@@ -5,12 +5,14 @@ import "./AppointmentsPage.css";
 import TimePicker from "rc-time-picker";
 import "rc-time-picker/assets/index.css";
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import Paypal from "../../components/Paypal/Paypal";
 
 function AppointmentsPage() {
   const [startDate, setStartDate] = useState(new Date());
   const [startHour, setStartHour] = useState(new Date());
   const location = useLocation();
   const doctor = location.state;
+  const price = doctor.price + ".00"
   return (
     <div className="box">
       <div className="botones flex flex-col">
@@ -38,6 +40,8 @@ function AppointmentsPage() {
         <Link>
           <button className='block h-16 bg-blue-600 text-white font-bold text-xl leading-6 cursor-pointer rounded-2xl w-60 hover:scale-105 hover:bg-blue-500  mt-20'
           onClick={()=> {
+            // const datos = Paypal(price)
+            // console.log(datos)
             console.log(startDate)
             console.log(startHour)
           }}>
