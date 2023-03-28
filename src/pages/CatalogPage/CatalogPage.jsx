@@ -6,56 +6,36 @@ import MartinaGonzalez from "../../assets/m5.jpg";
 import "./CatalogPage.css";
 import DoctorCard from "../../components/DoctorCard/DoctorCard";
 // import Navbar from "../../components/NavBar/Navbar"
+import {db} from "../../firebase/config"
+import { collection, query, getDocs, where } from "firebase/firestore"
+import { useEffect, useState } from "react"
 
 function Catalog() {
-  const doctores = [
-    {
-      name: "Maria Perez",
-      age: "35",
-      price: "25$",
-      specialties: ["Depresion", "Ansiedad"],
-      image: MariaPerez,
-    },
-    {
-      name: "Gabriel Perez",
-      age: "39",
-      price: "30$",
-      specialties: ["Trastornos Alimenticios", "Trastornos de la personalidad"],
-      image: GabrielPerez,
-    },
-    {
-      name: "Gabriela Lopez",
-      age: "29",
-      price: "40$",
-      specialties: ["Deportes", "Trabajo en equipo"],
-      image: GabrielaLopez,
-    },
-    {
-      name: "Juan Martinez",
-      age: "37",
-      price: "35$",
-      specialties: ["Psicoanalisis"],
-      image: JuanCristobalMartinez,
-    },
-    {
-      name: "Martina Gonzalez",
-      age: "38",
-      price: "20$",
-      specialties: ["Coaching", "Depresion"],
-      image: MartinaGonzalez,
-    },
-  ];
+  const [doctors, setDoctors] = useState([])
+  const getDoctors = async()=>{
+    let q = query(collection(db, "users") , where("job", "==", "Doctor")); 
+    const snapshot = await getDocs(q);
+    console.log(snapshot.docs)
+    const data = snapshot.docs.map(doctor => ({
+      ...doctor.data(),
+      id:doctor.id
+    }))
+    setDoctors(data);
+  }
+  useEffect(()=>{getDoctors()},[])
 
-  console.log(doctores);
+  console.log(doctors);
+
 
   return (
-    <div>
-      <div className="doctores">
-        {doctores.map((doctor) => (
-          <>
-            <DoctorCard doctor={doctor} />
-          </>
-        ))}
+    <div className="background">
+      <div className="container">
+        <div className="doctores">
+            {doctors.map((doctor)=> (
+                <DoctorCard key={doctor.id} doctor = {doctor}/>
+              ))
+            }
+        </div>
       </div>
     </div>
   );
