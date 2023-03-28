@@ -23,7 +23,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path={CATALOG_PAGE} element={<CatalogPage/>}/>
         <Route path={PROFILE_PAGE} element={<h1>PROFILE PAGE</h1>}/>
         <Route path={DATE_PAGE} element={<h1>DATE PAGE</h1>}/>
-        <Route path={DOCTORDETAIL_PAGE} element={<DetailDoctorPage/>}/>
+        <Route path={DOCTORDETAIL_PAGE()} element={<DetailDoctorPage/>}/>
         
 
 
