@@ -31,11 +31,11 @@ export function Navbar() {
               </Link>
             </li>
           </ul>
-          {!isLoadingUser && (
+          {/* {!isLoadingUser && (
              <ul className="lista">
               {!!user ? (
                 <>
-                  {/* <li className={`${styles.menuItem} ${styles.menuItemRight}`}>
+                  <li className={`${styles.menuItem} ${styles.menuItemRight}`}>
                     <Link to={PROFILE_URL} className={styles.link}>
                       <div className={styles.userAvatar} />
                       <span>{user.name}</span>
@@ -49,11 +49,11 @@ export function Navbar() {
                     >
                       <span>Salir</span>
                     </button>
-                  </li> */}
+                  </li>
                 </>
               ) : (
                 <>
-                  {/* <li className={`${styles.menuItem} ${styles.menuItemRight}`}>
+                  <li className={`${styles.menuItem} ${styles.menuItemRight}`}>
                     <Link to={LOGIN_URL} className={styles.link}>
                       <span>Iniciar sesión</span>
                     </Link>
@@ -62,11 +62,11 @@ export function Navbar() {
                     <Link to={REGISTER_URL} className={styles.link}>
                       <span>Registro</span>
                     </Link>
-                  </li> */}
+                  </li>
                 </>
               )}
             </ul>
-          )}
+          )} */}
         </nav>
       </>
     );

@@ -23,15 +23,4 @@ import {
     })
 
     return Doc
-
-    if (results.size > 0) {
-      const users = results.docs.map((item) => ({
-        ...item.data(),
-        id: item.id,
-      }));
-  
-      return users[0];
-    } else {
-      return null;
-    }
   }

@@ -87,8 +87,8 @@ function RegisterPage() {
       }
     } catch (error) {
       console.log(error);
-      console.log("This email is already in our DataBase");
-      alert("This email is already in our DataBase, Login!!");
+      console.log("Este usuario se encuentra en nuestra base de datos!");
+      alert("Este email ya se encuentra en nuestra base de datos, Login!!");
     }
   };
   return (
@@ -97,12 +97,12 @@ function RegisterPage() {
         <form className={styles.form} onSubmit={onSubmit}>
           <h1 className={styles.title}>SIGN UP!</h1>
           <p className={styles.welcomeTxt}>
-            Welcome! Join us in this experience.
+            Bienvenidos! Unanse esta experiencia.
           </p>
           {/* USERNAME FIELD */}
           <div>
             <div className={styles.inputContainer}>
-              <h3 htmlFor="name">User Name</h3>
+              <h3 htmlFor="name">Nombre de Usuario</h3>
               <input
                 type="text"
                 name="name"
@@ -126,7 +126,7 @@ function RegisterPage() {
             </div>
             {/* PASSWORD FIELD */}
             <div className={styles.inputContainer}>
-              <h3 htmlFor="password">Password</h3>
+              <h3 htmlFor="password">Contraseña</h3>
               <input
                 type="password"
                 name="password"

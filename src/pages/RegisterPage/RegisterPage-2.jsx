@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import styles from "./RegisterPage.module.css";
 import {
   register_pt2,
@@ -12,7 +12,7 @@ function RegisterPage2() {
   const location = useLocation();
   const data = location.state;
   const options = [
-    { value: "", text: "--Choose an option--" },
+    { value: "", text: "--Elige una opcion--" },
     { value: "pacient", text: "Pacient" },
     { value: "doctor", text: "Doctor" },
   ];
@@ -25,6 +25,8 @@ function RegisterPage2() {
     job: options[0].value,
     degree: "",
     cv: "",
+    price: 0,
+    slogan: "",
   });
 
   const handleOnChange = (event) => {
@@ -43,6 +45,10 @@ function RegisterPage2() {
         alert('Edad invalida!')
         return;
       }
+      if (Number.parseInt(formData.price) <= 0 || Number.parseInt(formData.price) >= 40) {
+        alert('Precio inválido, solo precio entre 0 a 40 $')
+        return;
+      }
       var archivoRuta = formData.cv
       const regex = /(.pdf)$/;
       if(formData.job=='Doctor'){
@@ -55,7 +61,7 @@ function RegisterPage2() {
       console.log("Todo salio bien");
       alert("Register complete...Enjoy!");
       navigate(USER_PAGE);
-      window.location.reload(false);
+      location.reload();
     } catch (error) {
       console.log(error);
       console.log("This email is already in our DataBase");
@@ -80,7 +86,7 @@ function RegisterPage2() {
           </div>
 
           {formData.job === "" ? (
-            <h2>Select an option to deploy the form</h2>
+            <h2>Selecciona tu roll para que se despliegue el form</h2>
           ) : (
             <>
               {formData.job === "Doctor" ? (
@@ -88,7 +94,7 @@ function RegisterPage2() {
                 <div>
                   {/* AGE FIELD */}
                   <div className={styles.inputContainer}>
-                    <h3 htmlFor="age">Age</h3>
+                    <h3 htmlFor="age">Edad</h3>
                     <input
                       type="number"
                       name="age"
@@ -100,19 +106,19 @@ function RegisterPage2() {
                   </div>
                   {/* master's degree */}
                   <div className={styles.inputContainer}>
-                    <h3 htmlFor="age">Master's degree</h3>
+                    <h3 htmlFor="degree">Especialidad</h3>
                     <input
                       type="text"
                       name="degree"
                       id="degree"
-                      placeholder="Ejmp. Anxiety"
+                      placeholder="Ejmp. Ansiedad"
                       onChange={handleOnChange}
                       required
                     />
                   </div>
                   {/* CV */}
                   <div className={styles.inputContainer}>
-                    <h3 htmlFor="age">CV</h3>
+                    <h3 htmlFor="cv">Curriculum</h3>
                     <input
                       type="file"
                       name="cv"
@@ -121,12 +127,36 @@ function RegisterPage2() {
                       required
                     />
                   </div>
+                  {/* Precio */}
+                  <div className={styles.inputContainer}>
+                    <h3 htmlFor="price">Precio</h3>
+                    <input
+                      type="text"
+                      name="price"
+                      id="price"
+                      placeholder="Ejmp. 20"
+                      onChange={handleOnChange}
+                      required
+                    />
+                  </div>
+                  {/* Slogan */}
+                  <div className={styles.inputContainer}>
+                    <h3 htmlFor="slogan">Ingresa un slogan</h3>
+                    <input
+                      type="text"
+                      name="slogan"
+                      id="slogan"
+                      placeholder="Ejmp. "
+                      onChange={handleOnChange}
+                      required
+                    /> 
+                  </div>                
                 </div>
               ) : (
                 <div>
                   {/* AGE FIELD */}
                   <div className={styles.inputContainer}>
-                    <h3 htmlFor="age">Age</h3>
+                    <h3 htmlFor="age">Edad</h3>
                     <input
                       type="number"
                       name="age"

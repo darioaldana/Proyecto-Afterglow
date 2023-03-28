@@ -100,7 +100,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             path={PROFILE_PAGE}
             element={
               <Private>
-                <ProfilePacient/>
+                <ProfilePacient />
               </Private>
             }
           />
@@ -108,7 +108,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             path={APPOINTMENTS_PAGE}
             element={
               <Private>
-                <AppointmentsPage/>
+                <AppointmentsPage />
               </Private>
             }
           />

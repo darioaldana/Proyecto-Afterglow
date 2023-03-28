@@ -1,57 +1,9 @@
-.rectangleMain {
-    position: absolute;
-    width: 100%;
-    height: 100px;
-    top: 5px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #76BAB2;
-    border-radius: 70px;
-    z-index: -1;
-}
-
-.profileImage {
-    position: absolute;
-    width: 400px;
-    height: 400px;
-    background: #CFF5E7;
-    mix-blend-mode: multiply;
-    left: 50px;
-    top: 150px;
-}
-
 .rectangleData {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: right;
-    width: 495px;
-    height: 54px;
+    justify-content: initial;
+    width: 100%;
+    height: 50px;
     margin-top: 40px;
-    margin-left: 500px;
-
-}
-
-.title {
-    position: absolute;
-    width: 845px;
-    height: 142px;
-    left: 295px;
-    top: 0px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-size: 40px;
-    line-height: 97px;
-    color: #000000;
-    margin-bottom: px;
-    font-weight: bold;
-}
-
-.form {
-    margin-top: 100px;
-}
-
-.input {
-    width: 60%;
-    height: 30px;
+    margin-left: 0px;
+    align-items: center;
 }
