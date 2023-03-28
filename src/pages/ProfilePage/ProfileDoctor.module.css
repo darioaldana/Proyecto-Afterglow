@@ -49,11 +49,11 @@
     text-align: center;
 }
 
-form {
+.form {
     margin-top: 100px;
 }
 
-input {
+.input {
     width: 60%;
     height: 30px;
 }
