@@ -109,7 +109,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             path={APPOINTMENTS_PAGE}
             element={
               <Private>
-                <AppointmentsPage />
+                <AppointmentsPage/>
               </Private>
             }
           />
