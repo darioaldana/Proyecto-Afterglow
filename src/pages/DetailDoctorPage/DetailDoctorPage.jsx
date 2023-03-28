@@ -23,8 +23,8 @@ export default function DetailDoctorPage() {
     degree,
     name,
     price,
-    photoURL
-    // overview,
+    photoURL,
+    slogan,
   }= doctor || {};
   
   return (
@@ -58,8 +58,8 @@ export default function DetailDoctorPage() {
                   <p className="bg-transparent text-sm md:text-md font-medium text-black"> {degree} </p>
                 </div > 
                 <div className="bg-transparent md:bg-transparent lg:bg-transparent  mt-0 md:mr-10  pl-4 italic">
-                  <h2 className="bg-transparent text-md md:text-lg font-medium text-black">OVERVIEW</h2>
-                  {/* <p className='bg-transparent text-sm md:text-md whitespace-normal text-black'>{overview}</p> */}
+                  <h2 className="bg-transparent text-md md:text-lg font-medium text-black">SLOGAN</h2>
+                  <p className='bg-transparent text-sm md:text-md whitespace-normal font-medium text-black'>{slogan}</p>
                 </div>
                 
                 <div className="bg-transparent flex justify-center items-center mt-5 mb-3 md:justify-center">
