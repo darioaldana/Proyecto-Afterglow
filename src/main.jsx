@@ -13,6 +13,8 @@ import CatalogPage from "./pages/CatalogPage/CatalogPage";
 import ChatPage from "./pages/ChatPage/ChatPage";
 import AppointmentsPage from "./pages/AppointmentsPage/AppointmentsPage";
 import ProfilePacient from "./pages/ProfilePage/ProfilePacient";
+import DetailDoctorPage from './pages/DetailDoctorPage/DetailDoctorPage';
+
 import {
   CHAT_PAGE,
   HOME_URL,
@@ -24,6 +26,7 @@ import {
   CATALOG_PAGE,
   PROFILE_PAGE,
   APPOINTMENTS_PAGE,
+  DOCTORDETAIL_PAGE
 } from "./constants/urls";
 import "./index.css";
 
@@ -108,8 +111,15 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             path={APPOINTMENTS_PAGE}
             element={
               <Private>
-                <AppointmentsPage />
+                <AppointmentsPage/>
               </Private>
+            }
+          />
+          <Route 
+            path={DOCTORDETAIL_PAGE()} element={
+            <Private>
+              <DetailDoctorPage/>
+            </Private>
             }
           />
         </Route>

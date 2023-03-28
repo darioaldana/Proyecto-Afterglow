@@ -4,6 +4,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import "./AppointmentsPage.css";
 import TimePicker from "rc-time-picker";
 import "rc-time-picker/assets/index.css";
+import { Link, useNavigate } from "react-router-dom";
 
 function AppointmentsPage() {
   const [startDate, setStartDate] = useState(new Date());
@@ -32,6 +33,16 @@ function AppointmentsPage() {
           maxDetail="hour"
           placeholder="7:00"
         />
+
+        <Link>
+          <button className='block h-16 bg-blue-600 text-white font-bold text-xl leading-6 cursor-pointer rounded-2xl w-60 hover:scale-105 hover:bg-blue-500  mt-20'
+          onClick={()=> {
+            console.log(startDate)
+            console.log(startHour)
+          }}>
+            GO
+          </button>
+        </Link>
       </div>
     </div>
   );
