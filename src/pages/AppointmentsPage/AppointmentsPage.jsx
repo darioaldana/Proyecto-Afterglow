@@ -35,7 +35,11 @@ function AppointmentsPage() {
         />
 
         <Link>
-          <button className='block h-16 bg-blue-600 text-white font-bold text-xl leading-6 cursor-pointer rounded-2xl w-60 hover:scale-105 hover:bg-blue-500  mt-20'>
+          <button className='block h-16 bg-blue-600 text-white font-bold text-xl leading-6 cursor-pointer rounded-2xl w-60 hover:scale-105 hover:bg-blue-500  mt-20'
+          onClick={()=> {
+            console.log(startDate)
+            console.log(startHour)
+          }}>
             GO
           </button>
         </Link>
