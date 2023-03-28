@@ -4,12 +4,13 @@ import "react-datepicker/dist/react-datepicker.css";
 import "./AppointmentsPage.css";
 import TimePicker from "rc-time-picker";
 import "rc-time-picker/assets/index.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 function AppointmentsPage() {
   const [startDate, setStartDate] = useState(new Date());
   const [startHour, setStartHour] = useState(new Date());
-
+  const location = useLocation();
+  const doctor = location.state;
   return (
     <div className="box">
       <div className="botones flex flex-col">

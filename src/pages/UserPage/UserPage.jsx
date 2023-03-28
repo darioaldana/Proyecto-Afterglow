@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import UserPageFoto from "../../assets/UserPage.png";
 import {
-  APPOINTMENTS_PAGE,
+  CATALOG_PAGE,
 } from "../../constants/urls";
 import { Link } from "react-router-dom";
 function UserPage() {

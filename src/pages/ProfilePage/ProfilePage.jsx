@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./ProfilePacient.module.css";
+import styles from "./ProfilePage.module.css";
 import { useState, useContext, useEffect } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { doc, updateDoc } from "firebase/firestore";
