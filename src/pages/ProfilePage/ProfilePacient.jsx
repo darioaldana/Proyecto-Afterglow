@@ -20,19 +20,9 @@ function ProfilePacient() {
     slogan: currentUser.slogan,
   });
 
-  const handleOnChange = (event) => {
-    const { name, value } = event.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const onSubmit = async (event) => {
+  const updateProfileDoc = async () => {
     try {
-      event.preventDefault();
       const dataRef = doc(db, "users", formData.uid);
-
       await updateDoc(dataRef, {
         name: formData.name,
         email: formData.email,
@@ -52,6 +42,37 @@ function ProfilePacient() {
       alert(
         "No podemos actualizar su perfil en estos momentos, intente más tarde"
       );
+    }
+  };
+  const handleOnChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    if (
+      JSON.stringify(formData.name) !== "" &&
+      JSON.stringify(formData.email) !== "" &&
+      JSON.stringify(formData.age) !== "" &&
+      currentUser.job == "Pacient"
+    ) {
+      updateProfileDoc();
+    } else if (
+      JSON.stringify(formData.name) !== "" &&
+      JSON.stringify(formData.email) !== "" &&
+      JSON.stringify(formData.age) !== "" &&
+      JSON.stringify(formData.degree) !== "" &&
+      JSON.stringify(formData.price) !== "" &&
+      JSON.stringify(formData.slogan) !== "" &&
+      currentUser.job == "Doctor"
+    ) {
+      updateProfileDoc();
+    } else {
+      alert("No puede dejar campos vacíos!!");
     }
   };
 
