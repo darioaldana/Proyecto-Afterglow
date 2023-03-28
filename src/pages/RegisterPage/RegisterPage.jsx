@@ -16,7 +16,7 @@ function RegisterPage() {
     name: "",
     email: "",
     password: "",
-    photoURL: "https://firebasestorage.googleapis.com/v0/b/afterglow-c7ada.appspot.com/o/Perfil_generico.png?alt=media&token=8be56578-f784-4935-b95b-62a3d3759748",
+    photoURL: "gs://afterglow-c7ada.appspot.com/Perfil_generico.png",
   });
 
   const handleSignWithGoogle = async () => {
