@@ -13,7 +13,6 @@ const NavbarChat = () => {
       <div className="user flex gap-2 bg-sky-700">
         <img className="bg-gris w-6 h-6 rounded-full object-cover" src={`${currentUser.photoURL}`} alt="" />
         <span className='bg-sky-700'>{currentUser.name}</span>
-        <button className="bg-rojo text-gris text-xs border-none" onClick={()=>signOut(auth)}>logout</button>
       </div>
     </div>
   )

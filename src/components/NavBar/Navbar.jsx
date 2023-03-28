@@ -3,7 +3,7 @@ import styles from "./NavbarStyles.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../../firebase/auth-service";
 import { useAuthContext } from "../../context/AuthContext";
-import { HOME_URL, CATALOG_PAGE, REVIEW_PAGE, CHAT_PAGE, PROFILE_PAGE } from "../../constants/urls";
+import { HOME_URL, CATALOG_PAGE, REVIEW_PAGE, CHAT_PAGE, PROFILE_PAGE, USER_PAGE} from "../../constants/urls";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 
@@ -26,8 +26,8 @@ export function Navbar() {
               <Link to={CATALOG_PAGE}>
                 <button className={styles.nav_links}>Catalog</button>
               </Link>
-              <Link to="/about">
-                <button className={styles.nav_links}>About</button>
+              <Link to={HOME_URL}>
+                <button className={styles.nav_links}>Inicio</button>
               </Link>
             </li>
           </ul>
@@ -76,6 +76,9 @@ export function Navbar() {
         <nav className={styles.NavbarItems}>
           <ul className={styles.nav_menu_logged}>
             <li className={styles.nav_menu_li}>
+            <Link to={USER_PAGE}>
+                <button className={styles.nav_links}>Inicio</button>
+              </Link>
               <Link to={CATALOG_PAGE}>
                 <button className={styles.nav_links}>Catalog</button>
               </Link>
